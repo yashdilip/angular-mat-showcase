@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="row">
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="Name" [(ngModel)]="name" name="name" required>
+    </mat-form-field>
+  </div>
+  <div class="row">
+    <mat-form-field>
+      <mat-label>Joined At</mat-label>
+      <input  [value]="joinedAt.value"  matInput [matDatepicker]="picker" placeholder="Joined Date">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </div>
+  <div class="row">
+      <mat-checkbox [checked]="isContractor"> Is Contractor?</mat-checkbox>
+  </div>
+
+  <div class="row">
+    <mat-label>Gender </mat-label>
+    <mat-radio-group [(value)]="selectedGender" >
+      <mat-radio-button value="male"> Male </mat-radio-button>
+      <mat-radio-button value="female"> Female </mat-radio-button>
+    </mat-radio-group>
+  </div>
+
+  <div class="row">
+    <mat-form-field>
+      <mat-label>Role</mat-label>
+      <mat-select [(value)]="role" placeholder="Environment">
+          <mat-option>None</mat-option>
+          <mat-option value="developer">Developer</mat-option>
+          <mat-option value="designer">Designer</mat-option>
+          <mat-option value="business_analyst">Business Analyst</mat-option>
+          <mat-option value="manager">Manager</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="row">
+    <mat-card-actions>
+      <button mat-raised-button (click)="submit()" color="primary">Submit</button>
+    </mat-card-actions>
+  </div>
+</div>
